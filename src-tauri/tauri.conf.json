@@ -15,11 +15,11 @@
       "targets": "all",
       "identifier": "com.tauri.dev",
       "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
+        "../resources/build/icons/32x32.png",
+        "../resources/build/icons/128x128.png",
+        "../resources/build/icons/128x128@2x.png",
+        "../resources/build/icons/icon.icns",
+        "../resources/build/icons/icon.ico"
       ],
       "resources": [],
       "externalBin": [],

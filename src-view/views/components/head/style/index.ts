@@ -1,4 +1,6 @@
-.global.components > .head > .head-info {
+import { css } from '@emotion/css/macro';
+
+export const head = css`
   position: absolute;
   top: 0;
   left: 0;
@@ -10,7 +12,6 @@
   align-items: center;
   color: var(--white);
   background-color: var(--black);
-
   > .content {
     padding-left: 10px;
     width: 100%;
@@ -20,7 +21,7 @@
     align-items: center;
 
     > .title {
-      font: normal 13px /13px ping-fang;
+      font: normal 13px /13px;
     }
   }
-}
+`;

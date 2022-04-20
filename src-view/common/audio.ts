@@ -1,10 +1,3 @@
-function pathToSrc(path: string) {
-  if (!path.startsWith('http://') && !path.startsWith('https://')) {
-    return `file:///${path.split('\\').join('/')}`;
-  }
-  return path;
-}
-
 class Audios {
   public static instance: Audios;
   // 当前播放源
@@ -25,6 +18,10 @@ class Audios {
   public volumeGradualTime: number = 0.7;
   // 音频的数据(可视化)
   public analyser: AnalyserNode;
+  // 监听音频状态更新
+  private audioUpdate = new Event('audio-update');
+  // 监听音频时间更新
+  private audioTimeUpdate = new Event('audio-time-update');
   // 音频Context
   private AudioContext: AudioContext = new AudioContext();
   // 当前播放
@@ -82,21 +79,25 @@ class Audios {
         this.AudioContext.currentTime + this.volumeGradualTime
       ); //音量淡入
       this.type = 1;
+      dispatchEvent(this.audioUpdate);
     };
 
     this.currentAudio.ontimeupdate = () => {
       //更新播放位置
       this.ingTime = this.currentAudio.currentTime;
+      dispatchEvent(this.audioTimeUpdate);
     };
 
     this.currentAudio.onpause = () => {
       //播放暂停
       this.type = 0;
+      dispatchEvent(this.audioUpdate);
     };
 
     this.currentAudio.onended = () => {
       //播放完毕
       this.clear();
+      dispatchEvent(this.audioUpdate);
     };
   }
 
@@ -106,14 +107,13 @@ class Audios {
     this.allTime = 0;
   }
 
-  async play(path?: string) {
-    if (path) {
-      const src = pathToSrc(path);
+  async play(src?: string) {
+    if (src) {
       this.currentAudio.src = src;
       this.src = src;
       return;
     }
-    if (!path && !this.currentAudio.src && this.src) {
+    if (!src && !this.currentAudio.src && this.src) {
       this.currentAudio.src = this.src;
       return;
     }
@@ -134,8 +134,8 @@ class Audios {
     });
   }
 
-  async setSrc(path: string) {
-    this.src = pathToSrc(path);
+  async setSrc(src: string) {
+    this.src = src;
   }
 
   clearSrc() {

@@ -1,33 +1,24 @@
-import { h, View } from '@/common/h';
-import Router from '@/router';
-import indexCss from './scss/index.lazy.scss';
+import router from '@/router';
+import { useDV } from '@/common/proxy';
+import { index } from './style';
+import contentR from '@/views/components/content';
 
-export default class About extends View {
-  styles = [indexCss];
-
-  count: number = 0;
-  countDom: HTMLElement | undefined;
-
-  onDeactivated() {
-    // Router.unInstance(this.$name);
-  }
-
-  countAdd() {
-    if (!this.countDom) {
-      this.countDom = <span>{this.count}</span>;
-      return;
-    }
-    this.count++;
-    this.countDom.textContent = this.count.toString();
+export default class About {
+  onLoad(parame: ViewParameters) {
+    router.routerState(contentR.load(parame));
   }
 
   render() {
-    this.countAdd();
+    const [data, view] = useDV(0);
+
     return (
-      <div class="info">
+      <div class={index}>
+        {contentR.render()}
         <div class="text">关于</div>
-        <button onClick={() => Router.back()}>首页</button>
-        <button onClick={() => this.countAdd()}>{this.countDom}</button>
+        <button onClick={() => router.routerState(contentR.to('test1'))}>test1</button>
+        <button onClick={() => router.routerState(contentR.to('test2'))}>test2</button>
+        <button onClick={() => router.push('/')}>首页</button>
+        <button onClick={() => data.value++}>{view}</button>
       </div>
     );
   }

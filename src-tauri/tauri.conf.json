@@ -33,10 +33,10 @@
       },
       "macOS": {
         "frameworks": [],
-        "minimumSystemVersion": "",
         "useBootstrapper": false,
         "exceptionDomain": "",
         "signingIdentity": null,
+        "providerShortName": null,
         "entitlements": null
       },
       "windows": {
@@ -61,7 +61,7 @@
       }
     ],
     "security": {
-      "csp": "default-src blob: data: filesystem: ws: wss: http: https: tauri: 'unsafe-eval' 'unsafe-inline' 'self' img-src: 'self'"
+      "csp": null
     }
   }
 }

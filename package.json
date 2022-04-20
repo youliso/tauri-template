@@ -1,26 +1,20 @@
 {
   "name": "tauri-template",
+  "description": "tauri vanilla template",
+  "license": "MIT",
   "scripts": {
-    "dev": "node build/script/dev.js",
-    "build": "node build/script/build.js"
+    "tauri": "tauri",
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.0.0-beta.10",
-    "@swc/core": "^1.2.120",
-    "css-loader": "^6.5.1",
-    "electron": "^16.0.5",
-    "electron-builder": "^22.14.5",
-    "electron-rebuild": "^3.2.5",
-    "html-webpack-plugin": "^5.5.0",
-    "sass": "^1.45.0",
-    "sass-loader": "^12.4.0",
-    "style-loader": "^3.3.1",
-    "swc-loader": "^0.1.15",
-    "typescript": "^4.5.4",
-    "webpack": "^5.65.0",
-    "webpack-dev-server": "^4.6.0"
+    "@tauri-apps/cli": "^1.0.0-rc.8",
+    "@emotion/css": "^11.9.0",
+    "prettier": "^2.6.2",
+    "vite": "^2.9.5",
+    "vite-plugin-babel-macros": "^1.0.6"
   },
   "dependencies": {
-    "@tauri-apps/api": "^1.0.0-beta.8"
+    "@tauri-apps/api": "^1.0.0-rc.3"
   }
 }

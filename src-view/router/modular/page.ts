@@ -1,13 +1,14 @@
+import index from '@/views/pages/index/index';
+
 const Router: Route[] = [
   {
     path: '/',
     name: '首页',
-    component: () => import('@/views/pages/index/index')
+    component: index
   },
   {
     path: '/about',
     name: '关于',
-    instance: true,
     component: () => import('@/views/pages/about/index')
   }
 ];

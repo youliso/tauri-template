@@ -1,8 +1,5 @@
-import GlobalComponent from "./common/globalComponent";
-import Head from "./views/components/head";
-import { routerInit } from "@/router";
-import "@/views/scss/color.scss";
-import "@/views/scss/index.scss";
+import GlobalComponent from '@/common/globalComponent';
+import router from '@/router';
+import '@/views/style';
 
-GlobalComponent.render("Head", new Head());
-routerInit("/");
+GlobalComponent.use(import('@/views/components/head'), 'Head').then(() => router.init());

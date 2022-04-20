@@ -1,4 +1,7 @@
-* {
+import { injectGlobal } from '@emotion/css/macro';
+
+injectGlobal`
+:root {
   --red: #e54d42;
   --orange: #f37b1d;
   --yellow: #fbbd08;
@@ -17,3 +20,20 @@
   --ghostWhite: #f1f1f1;
   --white: #ffffff;
 }
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body,
+#root,
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+`;

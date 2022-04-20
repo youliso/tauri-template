@@ -24,7 +24,7 @@ module.exports = defineConfig({
     rollupOptions: {
       input: {
         main: resolve('src-view/index.html'),
-        loading: resolve('src-view/loading.html')
+        splashscreen: resolve('src-view/splashscreen.html')
       }
     }
   },

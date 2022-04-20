@@ -20,7 +20,13 @@ module.exports = defineConfig({
     outDir,
     emptyOutDir: true,
     target: 'esnext',
-    minify: 'esbuild'
+    minify: 'esbuild',
+    rollupOptions: {
+      input: {
+        main: resolve('src-view/index.html'),
+        loading: resolve('src-view/loading.html')
+      }
+    }
   },
   resolve: {
     alias: {

@@ -6,8 +6,7 @@
   "build": {
     "distDir": "../dist",
     "devPath": "http://127.0.0.1:3347",
-    "beforeDevCommand": "",
-    "beforeBuildCommand": ""
+    "withGlobalTauri": true
   },
   "tauri": {
     "bundle": {
@@ -49,9 +48,7 @@
       "active": false
     },
     "allowlist": {
-      "window": {
-        "all": true
-      }
+      "all": false
     },
     "windows": [
       {

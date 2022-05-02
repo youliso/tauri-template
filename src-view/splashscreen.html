@@ -15,11 +15,10 @@
         position: relative;
         background: transparent;
       }
-      .bg {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      body {
+        background-image: url('/assets/splashscreen.webp');
+        background-size: cover;
+        position: relative;
       }
       .text {
         position: absolute;
@@ -30,7 +29,6 @@
     </style>
   </head>
   <body>
-    <img class="bg" src="/assets/splashscreen.webp" />
     <div class="text">loading</div>
   </body>
 </html>

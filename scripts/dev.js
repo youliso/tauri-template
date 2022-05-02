@@ -18,7 +18,7 @@ async function startView() {
   let port = 0;
   try {
     port = readFileSync(resolve('.port'), 'utf8');
-    tauriCfg.build.devPath = `http://127.0.0.1:${port}`;
+    tauriCfg.build.devPath = `http://localhost:${port}`;
     writeFileSync(resolve('src-tauri/tauri.conf.json'), JSON.stringify(tauriCfg, null, 2));
   } catch (e) {
     throw e;

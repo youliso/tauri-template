@@ -1,4 +1,4 @@
-import { ChildRoute } from '@/common/router';
+import { ChildRoute } from 'ym-web';
 import test1 from './test1';
 import test2 from './test2';
 

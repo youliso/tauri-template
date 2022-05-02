@@ -9,7 +9,7 @@ module.exports = defineConfig({
   root,
   base: './',
   esbuild: {
-    jsxInject: `import {h,f} from '@/common/h'`,
+    jsxInject: `import {h,f} from 'ym-web'`,
     jsxFactory: 'h',
     jsxFragment: 'f'
   },

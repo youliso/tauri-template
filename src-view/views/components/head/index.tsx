@@ -1,5 +1,4 @@
-import { useDV } from '@/common/proxy';
-
+import { useDV } from 'ym-web';
 import { head } from './style';
 
 export default class {

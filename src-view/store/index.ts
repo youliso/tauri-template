@@ -1,1 +1,1 @@
-import { createStore } from '@/common/store';
+import { createStore } from 'ym-web';

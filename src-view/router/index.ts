@@ -1,4 +1,4 @@
 import pageRoute from '@/router/modular/page';
-import Router from '@/common/router';
+import { Router } from 'ym-web';
 
-export default new Router('hash', pageRoute);
+export default new Router('inner', pageRoute);

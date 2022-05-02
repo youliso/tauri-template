@@ -1,5 +1,5 @@
 import router from '@/router';
-import { useDV } from '@/common/proxy';
+import { useDV } from 'ym-web';
 import { index } from './style';
 import contentR from '@/views/components/content';
 

@@ -1,4 +1,5 @@
 /node_modules
-/dist
-target
-WixTools
+/src-view/dist
+/src-view/target
+/src-tauri/target
+/src-tauri/WixTools

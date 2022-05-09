@@ -4,15 +4,17 @@
     "version": "0.1.0"
   },
   "build": {
-    "distDir": "../dist",
+    "distDir": "../src-view/dist",
     "devPath": "http://localhost:3347",
+    "beforeDevCommand": "cd src-view && trunk serve",
+    "beforeBuildCommand": "cd src-view && trunk build --release",
     "withGlobalTauri": true
   },
   "tauri": {
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "com.tauri.test",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",

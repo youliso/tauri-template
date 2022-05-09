@@ -3,10 +3,7 @@
   "description": "tauri vanilla template",
   "license": "MIT",
   "scripts": {
-    "tauri": "tauri",
-    "trunk": "trunk",
-    "dev": "node scripts/dev.js",
-    "build": "node scripts/build.js"
+    "tauri": "tauri"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.0.0-rc.9"

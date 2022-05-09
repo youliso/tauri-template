@@ -22,6 +22,12 @@ impl Component for Model {
         Self { value: 0 }
     }
 
+    fn rendered(&mut self, _ctx: &Context<Self>, first_render: bool) {
+        if first_render {
+            window::show_main();
+        }
+    }
+
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::Increment => {
@@ -75,5 +81,4 @@ impl Component for Model {
 
 fn main() {
     yew::start_app::<Model>();
-    window::show_main();
 }

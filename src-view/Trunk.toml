@@ -1,7 +1,7 @@
 [build]
 target = "index.html"
-dist = "../dist"
+dist = "./dist"
 
 [serve]
-addr = "127.0.0.1"
+addr = "localhost"
 port = 3347

@@ -5,7 +5,8 @@
   },
   "build": {
     "distDir": "../dist",
-    "devPath": "http://localhost:3347"
+    "devPath": "http://localhost:3347",
+    "withGlobalTauri": true
   },
   "tauri": {
     "bundle": {
@@ -55,16 +56,6 @@
         "resizable": true,
         "fullscreen": false,
         "visible": false,
-        "center": true
-      },
-      {
-        "width": 400,
-        "height": 200,
-        "transparent": true,
-        "decorations": false,
-        "url": "splashscreen.html",
-        "label": "splashscreen",
-        "alwaysOnTop": true,
         "center": true
       }
     ],

@@ -1,0 +1,10 @@
+[package]
+name = "yew-app"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gloo-console = "0.2"
+yew = "0.19"
+js-sys = "0.3"
+wasm-bindgen = "0.2"

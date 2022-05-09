@@ -1,7 +1,6 @@
-const { spawn } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-const vite = require('vite');
+const { spawn } = require("child_process");
+const fs = require("fs");
+const path = require("path");
 
 function deleteFolderRecursive(url) {
   let files = [];
@@ -18,26 +17,27 @@ function deleteFolderRecursive(url) {
     });
     fs.rmdirSync(url);
   } else {
-    console.log('...');
+    console.log("...");
   }
 }
 
 function buildMain() {
-  const main = spawn('yarn', ['tauri', 'build'], {
-    shell: true
+  const main = spawn("yarn", ["tauri", "build"], {
+    shell: true,
   });
   main.stdout.pipe(process.stdout);
   main.stderr.pipe(process.stderr);
 }
 
 async function buildView() {
-  await vite.build(require('./vite.config')).catch((error) => {
-    console.log(`\x1B[31mFailed to build renderer process !\x1B[0m`);
-    console.error(error);
-    process.exit(1);
+  const main = spawn("trunk", ["build", "--release"], {
+    shell: true,
+    cwd: path.resolve("src-view"),
   });
+  main.stdout.pipe(process.stdout);
+  main.stderr.pipe(process.stderr);
 }
 
-deleteFolderRecursive(path.resolve('dist')); //清除dist
+deleteFolderRecursive(path.resolve("dist")); //清除dist
 
 buildView().then(() => buildMain());

@@ -1,20 +1,27 @@
 {
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "npx npm run build",
+    "beforeDevCommand": "npx npm run dev",
+    "distDir": "../src-view/dist",
+    "devPath": "http://localhost:3347"
+  },
   "package": {
-    "productName": "tauri-template",
+    "productName": "tauri-app",
     "version": "0.1.0"
   },
-  "build": {
-    "distDir": "../src-view/dist",
-    "devPath": "http://localhost:3347",
-    "beforeDevCommand": "cd src-view && trunk serve",
-    "beforeBuildCommand": "cd src-view && trunk build --release",
-    "withGlobalTauri": true
-  },
   "tauri": {
+    "allowlist": {
+      "all": true
+    },
     "bundle": {
       "active": true,
-      "targets": "all",
-      "identifier": "com.tauri.test",
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -22,47 +29,38 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "resources": [],
-      "externalBin": [],
-      "copyright": "",
-      "category": "DeveloperTool",
-      "shortDescription": "",
+      "identifier": "org.youli.test",
       "longDescription": "",
-      "deb": {
-        "depends": []
-      },
       "macOS": {
-        "frameworks": [],
+        "entitlements": null,
         "exceptionDomain": "",
-        "signingIdentity": null,
+        "frameworks": [],
         "providerShortName": null,
-        "entitlements": null
+        "signingIdentity": null
       },
+      "resources": [],
+      "shortDescription": "",
+      "targets": ["deb"],
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
         "timestampUrl": ""
       }
     },
+    "security": {
+      "csp": null
+    },
     "updater": {
       "active": false
     },
-    "allowlist": {
-      "all": false
-    },
     "windows": [
       {
-        "title": "tauri-template",
-        "width": 800,
+        "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "fullscreen": false,
-        "visible": false,
-        "center": true
+        "title": "Tauri App",
+        "width": 800
       }
-    ],
-    "security": {
-      "csp": null
-    }
+    ]
   }
 }

@@ -1,0 +1,19 @@
+{
+  "name": "tauri-app",
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "node src-view/scripts/dev.js",
+    "build": "node src-view/scripts/build.js"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.0.1"
+  },
+  "devDependencies": {
+    "@emotion/css": "^11.9.0",
+    "@youliso/web-modules": "^1.0.0",
+    "prettier": "^2.7.1",
+    "vite": "^2.9.13",
+    "vite-plugin-babel-macros": "^1.0.6",
+    "@tauri-apps/cli": "^1.0.1"
+  }
+}

@@ -1,13 +1,9 @@
-import router from '@/router';
+import { show_main } from '@/common/window';
 import { index } from './style';
 
 export default class {
-  private testInterval: number | undefined;
-
-  onReady() {}
-
-  onUnmounted() {
-    if (this.testInterval) clearInterval(this.testInterval);
+  onReady() {
+    show_main();
   }
 
   render() {

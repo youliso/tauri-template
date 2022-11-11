@@ -5,6 +5,7 @@ const root = resolve('src-view/src');
 const outDir = resolve('src-view/dist');
 // https://vitejs.dev/config/
 module.exports = defineConfig({
+  clearScreen: false,
   mode: process.env['viteMode'] || 'production',
   root,
   base: './',
@@ -16,11 +17,13 @@ module.exports = defineConfig({
   server: {
     host: '::'
   },
+  envPrefix: ['VITE_', 'TAURI_'],
   build: {
     outDir,
     emptyOutDir: true,
     target: 'esnext',
-    minify: 'esbuild'
+    minify: !process.env.TAURI_DEBUG ? 'esbuild' : false,
+    sourcemap: !!process.env.TAURI_DEBUG
   },
   resolve: {
     alias: {

@@ -1,7 +1,6 @@
 {
   "name": "tauri-app",
   "scripts": {
-    "tauri": "tauri",
     "dev": "node src-view/scripts/dev.js",
     "build": "node src-view/scripts/build.js"
   },
